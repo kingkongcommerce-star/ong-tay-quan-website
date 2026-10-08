@@ -10,14 +10,15 @@ A premium dark-themed one-page website mockup for Ông Tây Quán, a Western ste
 - Cuisine: Steakhouse, Vietnamese, American, Mexican, Italian
 - Rating: 4.1/5 on Tripadvisor, #12 of 50 restaurants in Thủ Dầu Một
 
-**Placeholder (needs real assets before this goes live anywhere):**
-- `assets/hero-video.mp4` — hero banner video, not included. Drop in an 8-15s silent looping clip (steak on the grill, flame, plating shot). Keep it under ~5-8MB, H.264 MP4. Until that file exists, the hero uses a CSS Ken Burns zoom/pan + pulsing ember-glow overlay on the poster image so it still feels alive, not static.
-- `assets/hero-poster.jpg` — fallback image shown before the video loads / on slow connections.
+**Now real (boss's own photos, dropped onto Desktop 2026-10-08, 14 of 35 used):**
+- `assets/hero-poster.jpg` — real photo: ribeye steak plate with beer and the restaurant's actual brick-wall interior visible in the background. Ken Burns zoom/pan animates directly on this real photo now (genuinely visible — verified live via pixel diff and direct JS computed-style checks, not just claimed).
+- `assets/menu-steak.jpg`, `assets/menu-beef.jpg`, `assets/menu-western.jpg`, `assets/menu-seafood.jpg` — real dish photos (sliced ribeye, lamb chops, burger & fries, seared tuna).
+- `assets/gallery-1.jpg` through `gallery-9.jpg` — real photos: table spreads, outdoor terrace, burger bite, salad, pasta, seafood fried rice, shrimp plate.
+- These are the 14 strongest/most varied shots curated from the 35 photos boss provided — more can be swapped in or added if a bigger gallery is wanted.
+- Menu card 4 was relabeled from the original placeholder "Mexican Fare" to "Seafood & Asian-Fusion" to honestly match the real photo used (seared tuna) — no Mexican dish was in the photo set, so the copy wasn't left claiming something the image doesn't show.
 
-**Ready-to-use AI video generation prompt** (paste into Veo 3.1, Kling, or similar — covers the "steak sizzling, flames, chef plating, looping silently behind the headline" brief):
-
-> Cinematic close-up, 8-second seamless loop, no audio needed. A thick ribeye steak sizzling on an open flame grill, orange flames licking up around the edges, visible char marks forming, steam and light smoke rising. Slow motion, shallow depth of field, warm amber and orange lighting, dark moody restaurant background blurred out. Camera holds a static low-angle close shot, no cuts. Ultra-sharp HD, high-resolution 4K, cinematic color grade, no text, no logos, no people's faces — purely the steak, flame, and grill.
-- `assets/menu-*.jpg`, `assets/gallery-*.jpg` — placeholder image slots for real food/interior photos.
+**Still placeholder:**
+- `assets/hero-video.mp4` — no real video file yet, the CSS Ken Burns zoom on the real hero photo is the fallback and works well on its own. Drop in a real looping video here if/when one exists; a ready-to-use AI video generation prompt (steak sizzling, flames, chef plating) is banked in the project's email thread if needed later.
 - The reviews section pulls the real aggregate rating (4.1/5) but does NOT include fabricated customer quotes — per standing rule, no fake testimonials. Swap in 3-4 real pulled guest quotes once available.
 - The reservation form is front-end only (no backend) — connect it to a real booking system before going live.
 
