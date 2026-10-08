@@ -61,23 +61,23 @@ a{color:inherit;text-decoration:none;}
   object-fit:cover;
   z-index:0;
   background-color:#0b0b0d;
-  background-image:
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,140,40,0.85) 0%, rgba(255,140,40,0) 65%),
-    linear-gradient(160deg, #1a1210 0%, #0b0b0d 55%, #050404 100%),
-    url('assets/hero-poster.jpg');
+  background-image:url('assets/hero-poster.jpg');
   background-repeat:no-repeat;
-  background-size: 130% 130%, cover, cover;
-  background-position: 15% 25%, center, center;
-  animation: heroDrift 9s ease-in-out infinite alternate;
+  background-size:cover;
+  background-position:center 35%;
+  transform-origin:center 35%;
+  animation: heroKenBurns 16s ease-in-out infinite alternate;
+  will-change:transform;
 }
-/* Drifting glow fallback — animates the gradient's actual position/size
-   (not a transform:scale on a self-similar pattern, which produces no
-   visible change) so there's a real, clearly visible shift until a
-   looping video file is dropped into assets/hero-video.mp4 */
-@keyframes heroDrift{
-  0%{   background-position: 10% 20%, center, center; background-size: 120% 120%, cover, cover; }
-  50%{  background-position: 85% 70%, center, center; background-size: 220% 220%, cover, cover; }
-  100%{ background-position: 25% 80%, center, center; background-size: 140% 140%, cover, cover; }
+/* Real Ken Burns zoom/pan on the actual hero photo (a real sizzling
+   tomahawk-steak-on-the-grill image, assets/hero-poster.jpg) — this is
+   genuinely visible because it's zooming into real photographic detail,
+   unlike the earlier attempt that scaled a perfectly symmetric gradient.
+   Swap hero-poster.jpg for a real looping video in assets/hero-video.mp4
+   whenever that's ready; this stays as the fallback either way. */
+@keyframes heroKenBurns{
+  0%{   transform:scale(1)    translate(0,0);        }
+  100%{ transform:scale(1.18) translate(-3%,-2%);     }
 }
 .hero-overlay{
   position:absolute;inset:0;
