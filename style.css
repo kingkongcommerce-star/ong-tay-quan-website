@@ -60,7 +60,12 @@ a{color:inherit;text-decoration:none;}
   width:100%;height:100%;
   object-fit:cover;
   z-index:0;
-  background:#000 url('assets/hero-poster.jpg') center/cover no-repeat;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,106,38,0.45) 0%, rgba(201,106,38,0) 60%),
+    radial-gradient(ellipse 50% 40% at 20% 20%, rgba(201,162,75,0.15) 0%, rgba(201,162,75,0) 60%),
+    linear-gradient(160deg, #1a1210 0%, #0b0b0d 55%, #050404 100%),
+    url('assets/hero-poster.jpg') center/cover no-repeat;
+  background-blend-mode: screen, screen, normal, normal;
   animation: heroKenBurns 18s ease-in-out infinite alternate;
 }
 /* Ken Burns zoom/pan fallback — keeps the hero feeling alive even before
