@@ -61,11 +61,29 @@ a{color:inherit;text-decoration:none;}
   object-fit:cover;
   z-index:0;
   background:#000 url('assets/hero-poster.jpg') center/cover no-repeat;
+  animation: heroKenBurns 18s ease-in-out infinite alternate;
+}
+/* Ken Burns zoom/pan fallback — keeps the hero feeling alive even before
+   a real looping video file is dropped into assets/hero-video.mp4 */
+@keyframes heroKenBurns{
+  0%{transform:scale(1) translate(0,0);}
+  100%{transform:scale(1.12) translate(-1.5%,-1.5%);}
 }
 .hero-overlay{
   position:absolute;inset:0;
   background:linear-gradient(180deg, rgba(11,11,13,0.55) 0%, rgba(11,11,13,0.75) 60%, rgba(11,11,13,0.95) 100%);
   z-index:1;
+}
+/* Ember glow pulse — simulates flame-grill flicker behind the headline */
+.hero-overlay::after{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 85%, rgba(201,106,38,0.35) 0%, rgba(201,106,38,0) 55%);
+  animation: emberPulse 3.4s ease-in-out infinite;
+}
+@keyframes emberPulse{
+  0%,100%{opacity:0.5;}
+  50%{opacity:1;}
 }
 .hero-content{position:relative;z-index:2;}
 .eyebrow{color:var(--gold-light);font-size:0.8rem;letter-spacing:3px;font-weight:600;margin-bottom:16px;}
